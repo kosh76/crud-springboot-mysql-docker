@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+
+  mysql:
+    image: mysql:5.7
+
+
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=my_db
+      - MYSQL_PASSWORD=bestuser
+      - MYSQL_USER=bestuser
+
+
+  docker-demo:
+    image: docker-demo:latest
+
+    restart: always
+    ports:
+    - 8080:8080
+
+
+    depends_on:
+      - mysql
