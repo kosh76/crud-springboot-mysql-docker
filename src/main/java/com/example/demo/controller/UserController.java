@@ -29,7 +29,7 @@ public class UserController {
     public Optional<User> getUser(@PathVariable Long id){
         return userServiсe.findById(id);
     }
-    @GetMapping ("/deleteUser/{id}")
+    @DeleteMapping ("/deleteUser/{id}")
     public String deleteUser(@PathVariable Long id){
         userServiсe.deleteById(id);
         return "User deleted succefully: "+id;
